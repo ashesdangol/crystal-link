@@ -25,12 +25,10 @@ function Login(){
         username:"Tenisha1",
         password:"August23"
         },
-
         {
         username:"sthatenisha2",
         password:"1614Ts"
         },
-        
         {
         username: "user26",
         password: "*Tenisha123"
