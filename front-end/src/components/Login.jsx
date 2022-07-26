@@ -18,6 +18,10 @@ function Login(){
         password: "pass2"
         },
         {
+        username: "user3",
+        password: "pass3"
+        },
+        {
         username:"Tenisha1",
         password:"August23"
         },
