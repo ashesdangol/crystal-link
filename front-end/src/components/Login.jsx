@@ -16,6 +16,24 @@ function Login(){
         {
         username: "user2",
         password: "pass2"
+        },
+        {
+        username:"Tenisha1",
+        password:"August23"
+        },
+
+        {
+        username:"sthatenisha2",
+        password:"1614Ts"
+        },
+        
+        {
+        username: "user26",
+        password: "*Tenisha123"
+        },
+        {
+        username: "Ten1992",
+        password: "123Md*",
         }
     ];
     const errors = {
