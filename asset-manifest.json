@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/crystal-link/static/css/main.29a2c005.css",
-    "main.js": "/crystal-link/static/js/main.70a29a1a.js",
+    "main.js": "/crystal-link/static/js/main.1f4d00a8.js",
     "index.html": "/crystal-link/index.html",
     "main.29a2c005.css.map": "/crystal-link/static/css/main.29a2c005.css.map",
-    "main.70a29a1a.js.map": "/crystal-link/static/js/main.70a29a1a.js.map"
+    "main.1f4d00a8.js.map": "/crystal-link/static/js/main.1f4d00a8.js.map"
   },
   "entrypoints": [
     "static/css/main.29a2c005.css",
-    "static/js/main.70a29a1a.js"
+    "static/js/main.1f4d00a8.js"
   ]
 }
