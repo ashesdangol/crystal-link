@@ -74,7 +74,7 @@ app.post('/api/login', async (req, res) =>{
             const token = jwt.sign({ 
                 email:req.body.email,
                 password:req.body.password 
-            }, 'shhhhh');
+            }, process.env.secretKEY);
             return res.json({status : 'ok', user:token})
         }else{
             return res.json({status : 'ok', user:false})
@@ -86,7 +86,7 @@ app.post('/api/login', async (req, res) =>{
 app.get('/api/quote', async (req, res) =>{
    const token = req.headers['x-access-token']
    try {
-    const decoded = jwt.verify(token, 'shhhhh')
+    const decoded = jwt.verify(token, process.env.secretKEY)
     const email = decoded.email
     const user = await User.findOne({email:email})
     // console.log(user)
@@ -104,7 +104,7 @@ app.get('/api/quote', async (req, res) =>{
 app.post('/api/quote', async (req, res) =>{
     const token = req.headers['x-access-token']
     try {
-     const decoded = jwt.verify(token, 'shhhhh')
+     const decoded = jwt.verify(token, process.env.secretKEY)
      const email = decoded.email
      await User.updateOne(
         {email:email},
