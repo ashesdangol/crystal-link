@@ -86,6 +86,7 @@ function Signup(){
 
     return(
         <section className={cssModule.section__signup}>
+         <h1>Register</h1>
             <form className="flex flex-col gap-4" onSubmit={registerUser}>
                 <div>
                     <div className="mb-2 block">
