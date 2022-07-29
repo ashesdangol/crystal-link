@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import User from './models/user.model';
 
 const jwt = require('jsonwebtoken');
-
+import bcrypt from 'bcryptjs';
 
 const port = process.env.PORT || 8000;
 
@@ -39,9 +39,10 @@ app.post('/api/register', async (req, res) =>{
     // console.log(req.body.email)
 
     try {
+        const newPassword = await bcrypt.hash(req.body.password, 10)
         await User.create({
             email:req.body.email,
-            password:req.body.password
+            password:newPassword
         })
         res.json({status : 'ok'})
         // res.render('/dashb')
@@ -54,10 +55,17 @@ app.post('/api/login', async (req, res) =>{
    
        const user = await User.findOne({
             email:req.body.email,
-            password:req.body.password
+            // password:req.body.password
         })
 
-        if(user){
+        if(!user){return {status: 'error', error : 'Invalid login'}}
+
+        const isPasswordValid = await bcrypt.compare(
+            req.body.password, 
+            user.password
+            )
+
+        if(isPasswordValid){
             const token = jwt.sign({ 
                 email:req.body.email,
                 password:req.body.password 
@@ -69,6 +77,45 @@ app.post('/api/login', async (req, res) =>{
        
   
 })
+
+app.get('/api/quote', async (req, res) =>{
+   const token = req.headers['x-access-token']
+   try {
+    const decoded = jwt.verify(token, 'shhhhh')
+    const email = decoded.email
+    const user = await User.findOne({email:email})
+    // console.log(user)
+    res.json({status:'ok', quote:user.quote})
+    // return{
+    //     status:'ok', quote:user.quote
+    // }
+
+   } catch (error) {
+    console.log(error);
+    res.json({status:'error', error:'invalid token'})
+   } 
+
+})
+app.post('/api/quote', async (req, res) =>{
+    const token = req.headers['x-access-token']
+    try {
+     const decoded = jwt.verify(token, 'shhhhh')
+     const email = decoded.email
+     await User.updateOne(
+        {email:email},
+        {$set:{quote:req.body.quote}}
+        )
+    //  console.log(user)
+     return{
+         status:'ok', quote:User.quote
+     }
+ 
+    } catch (error) {
+     console.log(error);
+     res.json({status:'error', error:'invalid token'})
+    } 
+ 
+ })
 
 app.listen(port, ()=>{
     console.log(`server is listening on ${port}`);

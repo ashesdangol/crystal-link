@@ -27,6 +27,7 @@ function LoginForm(){
         if(response.data.user){
             alert('Login Succesfull')
             window.location.href='/dashboard'
+            localStorage.setItem("token", response.data.user);
         
         }else{
             alert('Login Failed, Please checkout your email and password')
