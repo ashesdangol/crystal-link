@@ -148,7 +148,7 @@ function Signup(){
                 </div>
                 <div className="flex items-center gap-2">
                     {/* <No Display Name id="agree" /> */}
-                    <Label htmlFor="agree">
+                    {/* <Label htmlFor="agree">
                     I agree with the{' '}
                     <a
                         href="/forms"
@@ -156,11 +156,13 @@ function Signup(){
                     >
                         terms and conditions
                     </a>
-                    </Label>
+                    </Label> */}
                 </div>
-                <Button type="submit">
-                    Register new account
+                <div className="flex justify-center">
+                <Button type="submit" >
+                    Register
                 </Button>
+                </div>
             </form>
         </section>
         

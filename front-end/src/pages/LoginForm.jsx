@@ -37,7 +37,7 @@ function LoginForm(){
 
     return(
         <section className={cssModule.section__signup}>
-            <h1>Login</h1>
+            <h1>Sign In</h1>
             <form className="flex flex-col gap-4" onSubmit={loginUser}>
                 <div>
                     <div className="mb-2 block">
@@ -80,7 +80,7 @@ function LoginForm(){
                 
                 <div className="flex items-center gap-2">
                     {/* <No Display Name id="agree" /> */}
-                    <Label htmlFor="agree">
+                    {/* <Label htmlFor="agree">
                     I agree with the{' '}
                     <a
                         href="/forms"
@@ -88,11 +88,14 @@ function LoginForm(){
                     >
                         terms and conditions
                     </a>
-                    </Label>
+                    </Label> */}
                 </div>
-                <Button type="submit">
-                    Login
+                <div className="flex justify-center">
+                <Button type="submit" >
+                    Sign in
                 </Button>
+                </div>
+                
             </form>
         </section>
         
