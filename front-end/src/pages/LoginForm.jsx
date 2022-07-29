@@ -49,7 +49,7 @@ function LoginForm(){
                     <TextInput
                     id="login_email"
                     type="email"
-                    placeholder="name@flowbite.com"
+                    placeholder="name@crystal.com"
                     required={true}
                     shadow={true}
                     name="email"

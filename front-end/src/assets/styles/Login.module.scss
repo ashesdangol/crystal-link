@@ -1,6 +1,9 @@
 
 .section__form{
     @apply grid h-screen place-items-center;
+    // An alternative solution which better preserves 
+    // the nested classes and styling is to use the global 
+    // scope :global on all the nested classes when using a preprocessor like sass or less.
     :global{
         label{
             @apply text-lg font-semibold;

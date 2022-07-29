@@ -1,41 +1,52 @@
 import React from "react";
-import CircularImage from "./common/CircularImage";
 import "flowbite"
 import {Footer} from 'flowbite-react';
+import cssModule from '../assets/styles/components/FooterMenu.module.scss';
+
+const currentYear = new Date().getFullYear();
+
 
 function FooterMenu(){
     return(
-       
-        <Footer container={true}>
-        <div className="w-full text-center">
-          <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
-            <Footer.Brand href="https://ashesdangol.github.io/crystal-link/">
-              <CircularImage imgSrc="https://picsum.photos/200/300" className="mr-3 " alt="crystalLink Logo"/>
-            </Footer.Brand>
-            <Footer.LinkGroup className="sm:flex sm:items-center sm:justify-between">
-              <Footer.Link href="#">
-                About
-              </Footer.Link>
-              <Footer.Link href="#">
-                Privacy Policy
-              </Footer.Link>
-              <Footer.Link href="#">
-                Licensing
-              </Footer.Link>
-              <Footer.Link href="#">
-                Contact
-              </Footer.Link>
-            </Footer.LinkGroup>
-          </div>
-          <Footer.Divider />
-          <Footer.Copyright
-            href="#"
-            by="Crystal Link"
-            year={2022}
-          />
-        </div>
-      </Footer>
+       <section className={cssModule.section__footer}>
+            <div className="footer__container">
+              <div className="footer__links ">
+                <div className="footer__links--left">
+                  <Footer.LinkGroup>
+                  <Footer.Link href="#">
+                    Condition of Use
+                  </Footer.Link>
+                  <Footer.Link href="#">
+                    Privacy Policy
+                  </Footer.Link>
+                </Footer.LinkGroup>
+                </div>
+                <div className="footer__links--right">
+                  <Footer.LinkGroup>
+                    <Footer.Link href="#">
+                      Help
+                    </Footer.Link>
 
+                  </Footer.LinkGroup>
+                </div>
+                
+
+              </div>
+              <div className="hidden sm:visible">
+              <Footer.Divider />
+              </div>
+              
+              <div className="footer__copyrights">
+                <Footer.Copyright
+                  by=" Crystal Link"
+                  year={currentYear}
+                />
+              </div>
+             
+            </div>
+     
+       </section>
+      
     )
 }
 

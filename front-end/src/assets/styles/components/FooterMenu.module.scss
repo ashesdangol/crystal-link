@@ -1,0 +1,30 @@
+.section__footer{
+   
+    // An alternative solution which better preserves 
+    // the nested classes and styling is to use the global 
+    // scope :global on all the nested classes when using a preprocessor like sass or less.
+    :global{
+        .footer__container {
+            .footer__links{
+                @apply grid gap-2 p-4 sm:px-10 sm:flex sm:justify-between ;
+                ul{
+                    @apply grid gap-2 text-center sm:flex ;
+                   }
+             
+            }
+            .footer__copyrights{
+                @apply pb-4 text-center;
+            }
+        }
+
+       
+            
+          
+            
+            
+        
+        
+        
+        
+    }
+}

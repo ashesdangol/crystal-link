@@ -6,4 +6,30 @@
     * {
       font-family: Proxima Nova, system-ui, sans-serif;
     }
+    // MAIN NAV MENU
+    .navbar__main{
+      &--top-sticky{
+        @apply sticky top-0;
+      }
+    }
+    // BODY
+    .body__contents{
+      &--height{
+        min-height:80vh;
+      }
+    }
+
+    // FOOTER 
+    .footer__main{
+      @apply bg-gray-50;
+      &--bottom-sticky{
+        height:100%;
+      }
+    } 
+
+    h1{
+      @apply text-5xl;
+    
+    }
+
 }

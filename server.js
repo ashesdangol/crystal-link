@@ -33,6 +33,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+
+
+
+
 app.post('/api/register', async (req, res) =>{
 
     // console.log(req.body)
