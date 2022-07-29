@@ -1,16 +1,23 @@
-// import logo from './logo.svg';
-// import './App.scss';
-import Login from "./components/Login";
+import {Routes, Route} from 'react-router-dom';
 import NavbarMenu from "./components/NavbarMenu";
 import FooterMenu from "./components/FooterMenu";
-function App() {
+import Signup from "./pages/Signup";
+import LoginForm from "./pages/LoginForm";
+import Dashboard from './pages/Dashboard';
+
+const App = () =>{
   return (
-    <>
-      <NavbarMenu />
-      <Login />
-      <FooterMenu />
-    </>
-  );
+    <div>
+    <NavbarMenu />
+    <Routes>
+      <Route path='/register' element={<Signup />} />
+      <Route path='/login' element={<LoginForm />} />
+      <Route path='/dashboard' element={<Dashboard />} />
+    </Routes>
+    <FooterMenu />
+  </div>
+  )
 }
+
 
 export default App;
