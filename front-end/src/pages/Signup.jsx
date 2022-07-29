@@ -72,11 +72,11 @@ function Signup(){
         e.preventDefault();
         if(input.password === input.confirmPassword){
             const response = await axios.post("/api/register",input).then(res =>{
-                console.log(res)
+                // console.log(res)
                 if(res.data.status === 'ok'){
                     navigate('/login');
                 }else{
-                    console.log('Hello')
+                    console.log('Error')
                 }
             })
            
