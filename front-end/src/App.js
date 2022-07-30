@@ -4,6 +4,9 @@ import FooterMenu from "./components/FooterMenu";
 import Signup from "./pages/Signup";
 import LoginForm from "./pages/LoginForm";
 import Dashboard from './pages/Dashboard';
+import GpLogin from '../src/gpPages/Login';
+
+
 
 const App = () =>{
   return (
@@ -14,7 +17,8 @@ const App = () =>{
     <div className="body__contents body__contents--height">
       <Routes>
         <Route path='/' element={<LoginForm />} />
-        <Route path='/crystal-link' element={<LoginForm />} />
+        <Route path='/crystal-link' element={<GpLogin />} />
+        {/* <Route path='/crystal-link' element={<LoginForm />} /> */}
         <Route path='/register' element={<Signup />} />
         <Route path='/login' element={<LoginForm />} />
         <Route path='/dashboard' element={<Dashboard />} />
