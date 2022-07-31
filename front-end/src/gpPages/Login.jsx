@@ -71,57 +71,57 @@ function Login(){
 
     return(
         <section className={cssModule.section__signup}>
-        <h1>Sign In</h1>
-        <div className={(isVisible?"block":"hidden")+" px-4 py-3 rounded relative border mt-20 " +(isSuccess?" bg-teal-100 border-teal-400  text-teal-700 ":"bg-red-100  border-red-400 text-red-700 ") } role="alert">
-            <span className="block sm:inline">{loginMessage}</span>
-        </div>
-        <form className="flex flex-col gap-4" onSubmit={loginUser}>
-            <div>
-                <div className="mb-2 block">
-                <Label
-                    htmlFor="login_email"
-                    value="Your email"
-                />
-                </div>
-                <TextInput
-                id="login_email"
-                type="text"
-                placeholder="name@crystal.com"
-                required={true}
-                shadow={true}
-                name="email"
-                value={input.email}
-                onChange={onInputChange}
-               
-                />
-                
+            <h1 className="mt-20 pb-10 text-center">Sign In</h1>
+            <div className={(isVisible?"inline-block":"hidden")+" px-4 py-3 rounded relative border mb-10 " +(isSuccess?" bg-teal-100 border-teal-400  text-teal-700 ":"bg-red-100  border-red-400 text-red-700 ") } role="alert">
+                <span className="block sm:inline">{loginMessage}</span>
             </div>
-            <div>
-                <div className="mb-2 block">
-                <Label
-                    htmlFor="login_password"
-                    value="Your password"
-                />
-                </div>
-                <TextInput
-                    id="login_password"
-                    type="password"
+            <form className="flex flex-col gap-4" onSubmit={loginUser}>
+                <div>
+                    <div className="mb-2 block">
+                    <Label
+                        htmlFor="login_email"
+                        value="Email or Phone number"
+                    />
+                    </div>
+                    <TextInput
+                    id="login_email"
+                    type="text"
+                    placeholder="name@crystal.com"
                     required={true}
                     shadow={true}
-                    value={input.password}
-                    name="password"
+                    name="email"
+                    value={input.email}
                     onChange={onInputChange}
-                />
                 
-            </div>
-            <div className="flex justify-center">
-            <Button type="submit" >
-                Sign in
-            </Button>
-            </div>
-            
-        </form>
-    </section>
+                    />
+                    
+                </div>
+                <div>
+                    <div className="mb-2 block">
+                    <Label
+                        htmlFor="login_password"
+                        value="Password"
+                    />
+                    </div>
+                    <TextInput
+                        id="login_password"
+                        type="password"
+                        required={true}
+                        shadow={true}
+                        value={input.password}
+                        name="password"
+                        onChange={onInputChange}
+                    />
+                    
+                </div>
+                <div className="flex justify-center">
+                <Button type="submit" color="failure" size="lg">
+                    Sign in
+                </Button>
+                </div>
+                
+            </form>
+        </section>
     );
 }
 

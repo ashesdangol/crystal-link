@@ -1,12 +1,13 @@
 .section__signup{
+    min-height: 40vh;
+    @apply mx-auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 70vh;
     form{
         width: 300px;
-        @apply mt-20;
+        @apply mx-auto;
+       
     }
     
 }
