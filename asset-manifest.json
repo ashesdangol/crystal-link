@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/crystal-link/static/css/main.085c71f1.css",
-    "main.js": "/crystal-link/static/js/main.efea768d.js",
+    "main.css": "/crystal-link/static/css/main.d26f71ea.css",
+    "main.js": "/crystal-link/static/js/main.9f508e87.js",
+    "static/media/crystal-2.svg": "/crystal-link/static/media/crystal-2.3dde8daba8bf64c59da29b8aad1f6b62.svg",
     "index.html": "/crystal-link/index.html",
-    "main.085c71f1.css.map": "/crystal-link/static/css/main.085c71f1.css.map",
-    "main.efea768d.js.map": "/crystal-link/static/js/main.efea768d.js.map"
+    "main.d26f71ea.css.map": "/crystal-link/static/css/main.d26f71ea.css.map",
+    "main.9f508e87.js.map": "/crystal-link/static/js/main.9f508e87.js.map"
   },
   "entrypoints": [
-    "static/css/main.085c71f1.css",
-    "static/js/main.efea768d.js"
+    "static/css/main.d26f71ea.css",
+    "static/js/main.9f508e87.js"
   ]
 }
