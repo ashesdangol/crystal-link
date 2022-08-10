@@ -4,8 +4,10 @@
   "description": "Crystal Link Server",
   "main": "server.js",
   "scripts": {
+    "heroku-postbuild": "cd front-end && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec babel-node server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +30,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.5.0",
     "mongoose-encryption": "^2.1.2",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",

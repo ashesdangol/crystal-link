@@ -1,11 +1,13 @@
 require("dotenv").config();
-import express from 'express';
-import cors from 'cors';
-import mongoose from 'mongoose';
-import User from './models/user.model';
+const express = require("express")
+const cors = require("cors")
+const mongoose = require("mongoose")
+const User = require("./models/user.model")
+
 
 const jwt = require('jsonwebtoken');
-import bcrypt from 'bcryptjs';
+const bcrypt = require("bcryptjs")
+
 
 const port = process.env.PORT || 8000;
 
@@ -16,7 +18,7 @@ mongoose.connect(process.env.mongoURL, {useNewUrlParser : true})
 const app = express();
 const bodyParser = require('body-parser');
 
-const whitelist = ['http://localhost:3000','http://localhost:8000', 'https://ashes-portfolio.herokuapp.com'];
+const whitelist = ['http://localhost:3000','http://localhost:8000', 'https://demo-login-register.herokuapp.com'];
 const corsOptions = {
     origin: function (origin, callback){
         console.log("**Origin of request "+ origin)
@@ -121,7 +123,15 @@ app.post('/api/quote', async (req, res) =>{
     } 
  
  })
-
+// THIS IS NECESSARY TO SERVE REACT IN THE BROWSER ON HEROKU
+if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'front-end/build')));
+    // Handle React routing, return all requests to React app
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, 'front-end/build', 'index.html'));
+    });
+}
 app.listen(port, ()=>{
     console.log(`server is listening on ${port}`);
 })
