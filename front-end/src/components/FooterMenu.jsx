@@ -38,7 +38,7 @@ function FooterMenu(){
               
               <div className="footer__copyrights">
                 <Footer.Copyright
-                  by=" Crystal Link"
+                  by=" Crystal Link - Ashes Dangol"
                   year={currentYear}
                 />
               </div>

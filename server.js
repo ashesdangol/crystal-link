@@ -41,22 +41,34 @@ app.use(bodyParser.json());
 
 
 app.post('/api/register', async (req, res) =>{
-
-    // console.log(req.body)
-    // console.log(req.body.email)
-
-    try {
+    
+    const getUserEmail =  req.body.email
+    const user = await User.findOne({
+        email:getUserEmail,
+        // password:req.body.password
+    })
+    if(!user){
         const newPassword = await bcrypt.hash(req.body.password, 10)
         await User.create({
             email:req.body.email,
             password:newPassword
         })
-        res.json({status : 'ok'})
-        // res.render('/dashb')
-    } catch (error) {
-        console.log(error);
+        .then(()=> res.json({status : 'ok'}))
+        .catch((error)=>{
+            console.log(error);
+            res.json({status : 'error', error:"Registration Failed"})
+        })
+    }else{
+        console.log(user.email)
+        console.log("Username already exists");
         res.json({status : 'error', error:"Registration Failed"})
     }
+   
+    // console.log(req.body)
+    // console.log(req.body.email)
+    
+       
+
 })
 app.post('/api/login', async (req, res) =>{
    

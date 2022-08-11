@@ -34,7 +34,8 @@ function Dashboard(){
         }else{
             populatecode()
         }
-    },[])
-    return <h1>Your quote:{quote || "No quote Found"} hello world</h1>
+    },[tokenString, navigate])
+    // return <h1>Your quote:{quote || "No quote Found"} hello world</h1>
+    return <h1 className="mt-10 text-center">Welcome to the Dashboard</h1>
 }
 export default Dashboard;

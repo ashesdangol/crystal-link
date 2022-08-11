@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cssModule from "../assets/styles/Signup.module.scss";
 import axios from "axios";
-import {Label, TextInput, Button} from "flowbite-react";
+import {Label, TextInput, Button, Alert} from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -13,7 +13,7 @@ function Signup(){
         confirmPassword: ''
       });
     
-     
+     const [userTaken, setUserTake] = useState(false);
       const [error, setError] = useState({
         email: '',
         password: '',
@@ -71,12 +71,13 @@ function Signup(){
       const registerUser = async (e) => {
         e.preventDefault();
         if(input.password === input.confirmPassword){
-            const response = await axios.post("/api/register",input).then(res =>{
+            await axios.post("/api/register",input).then(res =>{
                 // console.log(res)
                 if(res.data.status === 'ok'){
+                    setUserTake(false)
                     navigate('/login');
                 }else{
-                    console.log('Error')
+                    setUserTake(true)
                 }
             })
            
@@ -86,6 +87,7 @@ function Signup(){
 
     return(
         <section className={cssModule.section__signup}>
+          {userTaken && <div className="mb-4"><Alert color="failure"><span> Email already taken!</span></Alert></div>}
          <h1>Register</h1>
             <form className="flex flex-col gap-4" onSubmit={registerUser}>
                 <div>
