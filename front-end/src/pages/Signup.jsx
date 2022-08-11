@@ -87,7 +87,7 @@ function Signup(){
 
     return(
         <section className={cssModule.section__signup}>
-          {userTaken && <div className="mb-4"><Alert color="failure"><span> Email already taken!</span></Alert></div>}
+          {userTaken && <div className="mb-4 mt-8 md:mt-2"><Alert color="failure"><span> Email already taken!</span></Alert></div>}
          <h1>Register</h1>
             <form className="flex flex-col gap-4" onSubmit={registerUser}>
                 <div>
